@@ -10,7 +10,7 @@ First, clone the repository into a local directory and checkout the desired bran
 ```
 Next, add the following to your project's settings.gradle file, replacing path/to/exoplayer with the path to your local copy:
 ```
-  gradle.ext.exoplayerRoot = 'path/to/exoplayer'
+  gradle.ext.exoplayerRoot = 'path/to/ExoPlayer'
   gradle.ext.exoplayerModulePrefix = 'exoplayer-'
   apply from: new File(gradle.ext.exoplayerRoot, 'core_settings.gradle')
 ```
