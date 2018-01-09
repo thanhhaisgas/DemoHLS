@@ -62,15 +62,13 @@ public class PlayerManager {
         //binding exoPlayerView to SimpleExoPlayer
         exoPlayerView.setPlayer(player);
         exoPlayerView.requestFocus();
-        //preparing player with media Source
-        //player.prepare(createHlsMediaSource(AdsConfig.VIDEO_URL_HLS));
     }
-
+    //preparing player with media Source
     public void prepareVideo(String video, String adsTag){
         player.prepare(mediaSourceWithAds(createHlsMediaSource(video),adsTag, simpleExoPlayerView));
-        //player.prepare(mediaSourceWithAds(createDashMediaSource(AdsConfig.VIDEO_URL_HLS2),adsTag, simpleExoPlayerView));
+        //player.prepare(mediaSourceWithAds(createDashMediaSource(AdsConfig.VIDEO_URL_DASH),adsTag, simpleExoPlayerView));
     }
-
+    //create source media
     private MediaSource createHlsMediaSource(String videoUrl)
     {
         //Creating Video Content Media Source With Ads
@@ -145,7 +143,7 @@ public class PlayerManager {
                     }
                 });
     }
-
+    //attach ads to media source
     private MediaSource mediaSourceWithAds(MediaSource hlsMediaSource, String AD_TAG_URL, SimpleExoPlayerView exoPlayerView){
         imaAdsLoader = new ImaAdsLoader(context, Uri.parse(AD_TAG_URL));
         return new AdsMediaSource(

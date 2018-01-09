@@ -35,7 +35,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         btnChannel1.setOnClickListener(this);
         btnChannel2.setOnClickListener(this);
     }
-
+    //get ads from fb
     private void runAds(final String video, String channel){
         myRef.child(channel).addValueEventListener(new ValueEventListener() {
             @Override
@@ -68,7 +68,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         playerManager.stopVideo();
         super.onDestroy();
     }
-
+    //change channel
     @Override
     public void onClick(View view) {
         switch (view.getId()){
